@@ -28,104 +28,106 @@ function Homepage() {
 
 	useEffect(() => {
 
-		let uploadedDocments = document.getElementById("uploadedDocments");
-		let uploadedDocmentsRolled = false;
-		const uploadedDocmentsObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach((entry) => {
-				if ( entry.isIntersecting && !uploadedDocmentsRolled ) {
-					let i = 0;
-					let uploadedInterval = setInterval(setUploadedDocuments, 10);
+		setTimeout(function(){
+			let uploadedDocments = document.getElementById("uploadedDocments");
+			let uploadedDocmentsRolled = false;
+			const uploadedDocmentsObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach((entry) => {
+					if ( entry.isIntersecting && !uploadedDocmentsRolled ) {
+						let i = 0;
+						let uploadedInterval = setInterval(setUploadedDocuments, 10);
 
-					function setUploadedDocuments() {
-						if (i < 10000){
-							uploadedDocments.innerHTML = '+' + i;
-							i = i + 399;
-						} else {
-							clearInterval(uploadedInterval);
-							uploadedInterval = setInterval(setUploadedDocumentsSlow, 50);
+						function setUploadedDocuments() {
+							if (i < 10000){
+								uploadedDocments.innerHTML = '+' + i;
+								i = i + 399;
+							} else {
+								clearInterval(uploadedInterval);
+								uploadedInterval = setInterval(setUploadedDocumentsSlow, 50);
+							}
+						}
+
+						function setUploadedDocumentsSlow() {
+							if (i < 12000){
+								uploadedDocments.innerHTML = '+' + i;
+								i = i + 99;
+							} else {
+								uploadedDocments.innerHTML = '+12K';
+								clearInterval(uploadedInterval);
+								uploadedDocmentsRolled = true;
+							}
 						}
 					}
-
-					function setUploadedDocumentsSlow() {
-						if (i < 12000){
-							uploadedDocments.innerHTML = '+' + i;
-							i = i + 99;
-						} else {
-							uploadedDocments.innerHTML = '+12K';
-							clearInterval(uploadedInterval);
-							uploadedDocmentsRolled = true;
-						}
-					}
-				}
+				});
 			});
-		});
-		uploadedDocmentsObserver.observe(uploadedDocments);
+			uploadedDocmentsObserver.observe(uploadedDocments);
 
-		let signedDocuments = document.getElementById("signedDocuments");
-		let signedDocmentsRolled = false;
-		const signedDocumentsObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach((entry) => {
-				if ( entry.isIntersecting && !signedDocmentsRolled ) {
-					let j = 0;
-					let signedInterval = setInterval(setSignedDocuments, 10);
+			let signedDocuments = document.getElementById("signedDocuments");
+			let signedDocmentsRolled = false;
+			const signedDocumentsObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach((entry) => {
+					if ( entry.isIntersecting && !signedDocmentsRolled ) {
+						let j = 0;
+						let signedInterval = setInterval(setSignedDocuments, 10);
 
-					function setSignedDocuments() {
-						if (j < 15000){
-							signedDocuments.innerHTML = '+' + j;
-							j = j + 399;
-						} else {
-							clearInterval(signedInterval);
-							signedInterval = setInterval(setSignedDocumentsSlow, 50);
+						function setSignedDocuments() {
+							if (j < 15000){
+								signedDocuments.innerHTML = '+' + j;
+								j = j + 399;
+							} else {
+								clearInterval(signedInterval);
+								signedInterval = setInterval(setSignedDocumentsSlow, 50);
+							}
+						}
+
+						function setSignedDocumentsSlow() {
+							if (j < 17000){
+								signedDocuments.innerHTML = '+' + j;
+								j = j + 99;
+							} else {
+								signedDocuments.innerHTML = '+17K';
+								clearInterval(signedInterval);
+								signedDocmentsRolled = true;
+							}
 						}
 					}
-
-					function setSignedDocumentsSlow() {
-						if (j < 17000){
-							signedDocuments.innerHTML = '+' + j;
-							j = j + 99;
-						} else {
-							signedDocuments.innerHTML = '+17K';
-							clearInterval(signedInterval);
-							signedDocmentsRolled = true;
-						}
-					}
-				}
+				});
 			});
-		});
-		signedDocumentsObserver.observe(signedDocuments);
+			signedDocumentsObserver.observe(signedDocuments);
 
-		let minutesSaved = document.getElementById("minutesSaved");
-		let minutesSavedRolled = false;
-		const minutesSavedObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach((entry) => {
-				if ( entry.isIntersecting && !minutesSavedRolled ) {
-					let k = 0;
-					let minutesSavedInterval = setInterval(setMinutesSaved, 10);
+			let minutesSaved = document.getElementById("minutesSaved");
+			let minutesSavedRolled = false;
+			const minutesSavedObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach((entry) => {
+					if ( entry.isIntersecting && !minutesSavedRolled ) {
+						let k = 0;
+						let minutesSavedInterval = setInterval(setMinutesSaved, 10);
 
-					function setMinutesSaved() {
-						if (k < 600000){
-							minutesSaved.innerHTML = '+' + k;
-							k = k + 9999;
-						} else {
-							clearInterval(minutesSavedInterval);
-							minutesSavedInterval = setInterval(setMinutesSavedSlow, 50);
+						function setMinutesSaved() {
+							if (k < 600000){
+								minutesSaved.innerHTML = '+' + k;
+								k = k + 9999;
+							} else {
+								clearInterval(minutesSavedInterval);
+								minutesSavedInterval = setInterval(setMinutesSavedSlow, 50);
+							}
+						}
+
+						function setMinutesSavedSlow() {
+							if (k < 800000){
+								minutesSaved.innerHTML = '+' + k;
+								k = k + 9999;
+							} else {
+								minutesSaved.innerHTML = '+800K';
+								clearInterval(minutesSavedInterval);
+								minutesSavedRolled = true;
+							}
 						}
 					}
-
-					function setMinutesSavedSlow() {
-						if (k < 800000){
-							minutesSaved.innerHTML = '+' + k;
-							k = k + 9999;
-						} else {
-							minutesSaved.innerHTML = '+800K';
-							clearInterval(minutesSavedInterval);
-							minutesSavedRolled = true;
-						}
-					}
-				}
+				});
 			});
-		});
-		minutesSavedObserver.observe(minutesSaved);
+			minutesSavedObserver.observe(minutesSaved);
+		}, 500)
 	});
 
 	return(
