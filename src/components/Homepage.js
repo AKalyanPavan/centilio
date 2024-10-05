@@ -142,7 +142,7 @@ function Homepage() {
 				<div className="text-center text-[18px] max-w-[700px] mx-auto leading-[28px]">
 					Centilio Sign is a trusted electronic signature solution to keep your company operating smoothly. Document creation, contract management, payment processing, and the development of automated workflows are all within your reach.
 				</div>
-				<Button title="SIGN UP FOR FREE" style="mx-auto" />
+				<Button title="SIGN UP FOR FREE" style="mx-auto font-medium w-fit" />
 				<img className="mt-[125px]" src={HomepageImage} />
 				<div className="min-[990px]:flex block justify-between mt-[100px] font-semibold text-center lg:w-[90%] mx-auto">
 		            <div className="">

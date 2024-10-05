@@ -5,24 +5,26 @@ import linkedin from './../images/linkedin.png';
 import instagram from './../images/instagram.png';
 import twitter from './../images/twitter.png';
 
-function Footer() {
+function Footer({showImage = true}) {
 	return (
 		<>
 			<section className="max-w-[1400px] min-[500px]:px-[40px] px-[20px] mx-auto">
-		        <div className="mt-[150px] bg-[#0e071e] flex items-center text-white justify-between rounded-[14px] px-[80px] max-lg:py-[80px] max-sm:p-[30px]">
-		        	<div className="">
-			        	<div className="sm:text-[44px] text-[30px] leading-[54px] font-bold mb-[50px]">
-			        		<span>Get Started with <br className="max-sm:hidden" />Centilio Sign Today!</span>
-			        	</div>
-			        	<span className="text-[18px]">15 day free trial No credit card required.</span>
-			        	<a className="">
-				        	<div className="cursor-pointer text-[#2c0563] w-fit bg-white font-semibold px-[40px] py-[14px] rounded-[6px] mt-[20px]">
-				        		Contact Sales
+				{showImage && 
+			        <div className="mt-[150px] bg-[#0e071e] flex items-center text-white justify-between rounded-[14px] px-[80px] max-lg:py-[80px] max-sm:p-[30px]">
+			        	<div className="">
+				        	<div className="sm:text-[44px] text-[30px] leading-[54px] font-bold mb-[50px]">
+				        		<span>Get Started with <br className="max-sm:hidden" />Centilio Sign Today!</span>
 				        	</div>
-			        	</a>
-		        	</div>
-		        	<img className="w-[40%] pt-[80px] lg:block hidden" src={footerImage} />
-		        </div>
+				        	<span className="text-[18px]">15 day free trial No credit card required.</span>
+				        	<a className="">
+					        	<div className="cursor-pointer text-[#2c0563] w-fit bg-white font-semibold px-[40px] py-[14px] rounded-[6px] mt-[20px]">
+					        		Contact Sales
+					        	</div>
+				        	</a>
+			        	</div>
+			        	<img className="w-[40%] pt-[80px] lg:block hidden" src={footerImage} />
+			        </div>
+		    	}
 		        <div className="mt-[150px] md:flex gap-[40px]">
 		        	<div className="w-fit max-md:mb-[50px]">
 			        	<img className="w-[150px]" src={Logo} />

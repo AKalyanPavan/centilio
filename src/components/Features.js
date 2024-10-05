@@ -22,7 +22,7 @@ function Features() {
 						<div className="text-[18px] leading-[32px]">
 							Centilio is a trusted electronic signature solution to keep your company operating smoothly. Document creation, contract management, payment processing, and the development of automated workflows are all within your reach.
 						</div>
-						<Button title={"SIGN UP YOUR FREE TRAIL"} style={"px-[40px]"} />
+						<Button title="SIGN UP YOUR FREE TRAIL" style="px-[40px] font-medium w-fit" />
 					</div>
 				</div>
 				<img className="my-[120px]" src={centFeat} />
